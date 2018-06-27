@@ -2,8 +2,8 @@
 - hosts: vps
   roles:
     - check-java
-    # - ansible-role-java
-    # - git 
+    - ansible-role-java
+    - git 
     - create-user
       
     
