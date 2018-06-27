@@ -1,10 +1,11 @@
 ---
 - hosts: vps
   tasks:
-  - name: Listing all groups
-    shell: groups >> groups.txt
   - name: Installing git
     apt: 
       name: git
       update_cache: yes
       state: latest
+  - name: Using shell module
+    shell: echo "Hello World"
+
