@@ -1,0 +1,19 @@
+---
+- hosts: vps
+  tasks:
+    - name: Listing all groups
+      shell: groups >> groups.txt
+    - name: Create a login user
+      user:
+        name: Jan_Kowalski
+        #password = secret
+        password: '$6$F4NWXRFtSdCi8$DsB5vvMJYusQhSbvGXrYDXL6Xj37MUuqFCd4dGXdKd6NyxT3lpdELN07/Kpo7EjjWnm9zusFg/LLFv6oc.ynu/'
+        groups: docker, sudo   
+        state: present
+        shell: /bin/bash       
+        home: /home/Jan_Kowalski  # Defaults to /home/<username>
+    - name: Installing git
+      apt: 
+        name: git
+        update_cache: yes
+        state: latest

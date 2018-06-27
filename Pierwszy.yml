@@ -1,8 +1,0 @@
----
-- hosts: vps
-  become: yes
-  tasks:
-    - name: Pingowanie serwera
-      ping:
-    - name: XDDD
-      ping:    

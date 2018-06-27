@@ -1,0 +1,13 @@
+---
+- name: Ensure groups exists
+  group:
+    name: "{{ userGroups }}"
+- name: Create a login user
+  user:
+      name: "{{ userName }}"
+      #usemkpasswd --method=sha-512 to generate password, below is sha for 'admin'
+      #On Debian/Ubuntu systems, mkpasswd likely exists, but if not, it's part of the whois package: sudo apt-get install -y whois
+      password: '$6$jBX.foCBj88a$fggQOR6QzZynwZ6p9QW.MJIMHRzYaUa43fjIpsvFa07JCRhXEZbJkoi1fA2m2k9W05p3OMECJeQXRhW/tdKLW.'
+      groups: "{{ userGroups }}"   
+      state: present
+      shell: /bin/bash      

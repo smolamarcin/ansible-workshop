@@ -1,7 +1,8 @@
 ---
 - hosts: vps
   tasks:
-    - name: Install maven and git
-      apt: name={{item}} state=installed update_cache=true
+    - name: Install git and vim
+      apt: name={{item}} state=present update_cache=true
       with_items:
         - git
+        - vim
