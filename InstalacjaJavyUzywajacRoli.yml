@@ -1,0 +1,8 @@
+---
+- hosts: vps
+  roles:
+    - check-java
+    # - ansible-role-java
+    - git 
+      
+    
